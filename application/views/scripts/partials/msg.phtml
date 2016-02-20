@@ -1,0 +1,27 @@
+<?php 
+//$mchat = new Application_Model_DbTable_chat();
+//echo $mchat->id_polych;
+ $TBmails = new Application_Model_DbTable_users(); 
+ $name=$TBmails->mailusers($this->id_user,'name');
+ $img=$TBmails->mailusers($this->id_user,'image');
+ $data=$this->data;
+ $id_user=$this->id_user;
+ $text=$this->text;
+?>
+<table style=" width: 100%; margin-top: 10px">   
+    <tr>
+        <td rowspan="3"><a class="post_image" href="<?php echo $this->url(array('controller'=>'index', 'action'=>'index', 'id'=>$this->id_user));?>">
+                <img src="<?php echo $img?>" width="50" height="50"></a>
+    </td>
+        <td><a class="author" href="<?php echo $this->url(array('controller'=>'index', 'action'=>'index', 'id'=>$this->id_user));?>" id="data-from"><?php echo $name?></a></td>
+        <td><div id="post_delete38638138_549" class="post_delete_button fl_r">
+                <a><span id="link" onclick="deletecht(<?php echo $this->id;?>)">удалить</span></a>   
+              </div> </td>
+    </tr>
+    <tr>
+        <td colspan="2"><div id="wpt38638138_549"><?php echo  $text?></div></td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="2"><small> <span class="rel_date"><?php echo $data?></span></small></td>
+    </tr>
+ </table> 

@@ -1,0 +1,19 @@
+<?php  include("../application/views/scripts/mails/mailwindow.php");?>
+
+<table class="msg">
+  
+  <tbody><tr>
+   
+   <th>&nbsp;</th>
+   <th>Получатель</th>
+   <th>Тема сообщения</th>
+   <th>&nbsp;</th>
+  </tr>
+
+          
+         <?php
+        echo $this->partialLoop('partials/mailsdown.phtml', $this->mails);
+    ?>
+
+
+</tbody></table>

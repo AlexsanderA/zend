@@ -1,0 +1,11 @@
+<?php include("../application/views/scripts/mails/mailwindow.php");?>  
+
+<center>
+   
+<table style="width: 400px;">
+
+         <?php
+        echo $this->partialLoop('partials/moviemail.phtml', $this->users);
+    ?>
+
+</table></center>

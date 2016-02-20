@@ -1,0 +1,18 @@
+  <?php  $ids=Zend_Auth::getInstance()->getIdentity()->id;
+                     ?>    
+ <tr style='border-style: dotted;border-color: #149bdf;'>
+<td > 
+    <a class="friends_bigph" style=""></a>
+    <a class="img" href=""><img class="friends_photo_img"  style='width: 100px; height: 100px' src="<?php echo $this->escape($this->image);?>"></a>
+</td>
+<td></td><center>
+<td>
+ 
+   <a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'index', 'id'=>$this->id));?>"><b><?php echo $this->escape($this->name);?></b></a><br>
+   <b><?php echo $this->escape($this->username);?></b><br>
+   <span id="linkbuttn" onclick="writeMessage(<?php echo "'".$this->name."','".$this->id."','".$ids."',''"; ?>)">Написать сообщение</span> 
+   </td></center> </tr>                       
+
+             
+     
+      

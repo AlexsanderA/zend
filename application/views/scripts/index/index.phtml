@@ -1,0 +1,39 @@
+  <?php
+$this->title ="Пользователь";
+if ($this->id_polych=='') {$this->id_polych=Zend_Auth::getInstance()->getIdentity()->id;}
+?> 
+<table> 
+    <tr>   
+       <?php
+         echo $this->partialLoop('partials/profil.phtml', $this->users);
+    ?> 
+</tr>
+<tr>
+    <td colspan="2">
+                  
+    <div class="input_back_content">Что у Вас нового?</div>
+   <input type="hidden" id="id_user" value="<?php echo Zend_Auth::getInstance()->getIdentity()->id;?>">
+   <input type="hidden" id="id_polych" value="<?php echo $this->id_polych?>">
+       <textarea id="post_field" class="fl_l" style="width: 450px; height: 100px;"></textarea>
+  
+  <div id="post_warn" style='width: auto; padding-top: 120px'></div>
+    <div class="button_blue fl_l"><button id="send_post" onclick="sendchat()">Отправить</button></div>
+    <div id="page_add_media" class="fl_r"><span class="add_media_lnk">Прикрепить</span></div>
+       
+    </td>
+</tr>
+<tr>
+    <td id="cont_chat" > 
+        <?php
+         echo $this->partialLoop('partials/msg.phtml', $this->chat);
+    ?> 
+       
+        
+        
+    </td>
+    
+</tr>
+  
+
+
+</table>

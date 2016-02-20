@@ -1,0 +1,135 @@
+<?php
+    $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+    $this->headTitle()->setSeparator(' - ');
+    $this->headTitle('Zend Framework');
+    
+    echo $this->doctype();
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/site.css'); ?>
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/mail.css'); ?>
+    <?php
+
+echo $this->headScript();
+
+ ?>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+<script src='/js/ajaxupload.js'></script>
+<script src='/js/jquery-1.1.4.pack.js'></script>
+</head>
+<body>
+    
+    
+  <div class="scroll_fix" style="width: 1348px;">
+  <div id="page_layout" style="width: 791px;">
+    <div id="page_header" class="p_head p_head_l0">
+       
+    <div class="navbar">
+       
+                <div class="navbar-inner">
+                    <div class="container" style="width: auto">
+                        <a class="brand" href="/" >
+                         <?php  if (Zend_Auth::getInstance()->hasIdentity()) { 
+                         echo Zend_Auth::getInstance()->getIdentity()->name;}
+                         else {
+                            echo ' Mails ';
+                            
+                         }?>
+                        </a>
+                        <input type="hidden" id="id_user_aut" value="<?php echo Zend_Auth::getInstance()->getIdentity()->id; ?>">
+                        <div class="nav-collapse">
+                            <!-- выводим главное меню -->
+                            
+                           
+                            <ul class="nav pull-right">
+                                <!-- <li class="divider-vertical"></li> -->
+                               <?php if (Zend_Auth::getInstance()->hasIdentity()) { ?>
+                                                                   
+                                    <li>
+                                        <?php
+                                        
+                                        $url = $this->url(array('controller'=>'auth', 'action'=>'logout'));
+                                         // если пользователь авторизирован, показываем ему кнопку "Выход"
+                               echo "<a href=\"{$url}\">Выход</a>";}?>
+                                        </li>                                                                        
+                                     <li><a href="<?php echo  $this->url(array('controller'=>'auth', 'action'=>'login'));  ?>" id="login">Войти</a>
+                                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+      
+    </div>
+
+    <div id="side_bar" class="fl_l" style="">
+      <ol>
+    <li> <a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'index', 'id'=>Zend_Auth::getInstance()->getIdentity()->id))?>" onclick="" id="myprofile" class="left_row"><span class="left_label inl_bl">Мой профиль</span></a> </li>
+    <li> <a href="<?php echo  $this->url(array('controller'=>'mails', 'action'=>'frends')); ?>" class="left_row" ><span class="left_label inl_bl">Мои Друзья</span></a>  </li>
+    <li><a href="<?php echo  $this->url(array('controller'=>'mails', 'action'=>'mailup')); ?>" class="left_row" ><span class="left_label inl_bl">Входящие&nbsp&nbsp<span id="mail_ups"></span>  </span></a>   </li>
+      <li><a href="<?php echo  $this->url(array('controller'=>'mails', 'action'=>'maildown')); ?>" class="left_row"><span class="left_label inl_bl">Отправленные<div id="results"></div></span></a>    </li>
+</ol>
+
+          </div>
+
+    <div id="page_body" class="fl_r" style="width: 631px;">
+      <div id="header_wrap2">
+        <div id="header_wrap1">
+          <div id="header" style="">
+                <?php  echo $this->title ?>
+             </div>
+        </div>
+      </div>
+     
+        <div id="wrap2" >
+  <div id="wrap1" style="min-height: 100%;">
+    <div id="content">
+        <div id="profile" >
+    
+  
+        <?php echo $this->layout()->content; ?>
+ 
+            
+         <br class="clear">
+  
+</div></div>
+  
+</div></div>
+    
+
+    <div id="footer_wrap" class="fl_r" style="width: 661px;">
+      <div id="bottom_nav">
+  <a class="bnav_a" href="/about">о сайте</a>
+  <a class="bnav_a" href="/support?act=new">помощь</a>
+      </div>
+<div id="footer" class="foter_layout">
+    <div class="copy_lang"> Mails © 2013 - 2016 &rthree;  <small><a href="">Александр</a></small>
+  </div>
+		</div>
+		 <div class="develop_site">
+			<div class="develop_left">
+				<a href="http://www.alexseev.gq" >Где Ёж</a><br>
+				<span class="develop_but">Web- Studio</span>
+				
+			</div>
+			<div class="develop_rigth">
+			<img class="img_develop" src="/img/logo.png">
+			</div>
+			
+    
+  </div>
+</div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div></div>    
+            
+            
+</body>
+</html>

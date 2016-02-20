@@ -1,0 +1,22 @@
+<?php 
+    $img=$this->image;
+    $datar=$this->data_bith;
+    $siti=$this->citi;
+    $emai=$this->username;
+    $name=$this->name;
+    ?>
+
+<td style='width: auto;'>
+
+  <a id="profile_photo_link" href="">
+  
+   <img width="200" height="200" src="<?php echo $img?>" alt="11">
+  </a>
+  </td>
+  <td>
+      <div style='font-size: 45px; height: 80px; color: #0e90d2'><span><?php echo $name; ?></span> </div>  
+    <li id="title_profil">День рождения:&nbsp;</li><br><li  id="title_profil_val"><?php echo $datar; ?></li> 
+    <li id="title_profil">Родной город:&nbsp;</li><br><li id="title_profil_val"><?php echo $siti; ?></li> 
+    <li id="title_profil">Email:&nbsp;</li> <br><li id="title_profil_val"><?php echo $emai;?></li>
+    
+</td>

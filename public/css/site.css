@@ -1,0 +1,67 @@
+#upload{
+
+/* margin-top:-65px;*/
+left:545px;
+margin-top:-5px;
+ position:absolute;
+
+}
+ .searchGlass{
+
+ }
+.form-buttons{margin-left:9px}
+
+#profile {
+  padding: 10px 10px 0px;
+}
+
+
+.fl_l { float: left; }
+.fl_r { 
+    float: right;
+	}
+.ta_l { text-align: left; }
+.ta_r { text-align: right; }
+.inl_bl {display:-moz-inline-stack; display:inline-block; _overflow:hidden; vertical-align: top; zoom:1; *display:inline;}
+
+#page_header {
+  height: 40px;
+}
+.msg, .box_msg {
+  background-color: #ffffff; 
+  border: 1px solid #D5DDE5;
+}
+.msg_tr{
+   background-color: #F9F6E7;   
+}
+.box_msg {
+  font-weight: bold;
+}
+/* Footer */
+
+#footer_wrap {
+  /*clear: both;*/
+  line-height: 1.36em;
+  padding: 8px 0px 0px;
+  text-align: center;
+  width: 661px;
+}
+
+#title_profil{
+   margin-left: 30px ;
+   list-style: none outside none;
+   float: left;
+  
+   color: #0480be;
+   
+}
+
+#title_profil_val{
+ list-style: none outside none;
+ margin-left: 40px ;
+ 
+}
+
+#registreishn {
+    margin-left: 120%;
+}
